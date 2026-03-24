@@ -29,6 +29,8 @@
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
+    --gradient-primary: #2ccde8;
+    --gradient-secondary: #2c99e4;
   }
   .dark {
     --background: 0 0% 3.9%;
@@ -55,6 +57,8 @@
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+    --gradient-primary: #3d6b8e;
+    --gradient-secondary: #1b203f;
   }
 }
 
@@ -64,5 +68,43 @@
   }
   body {
     @apply bg-background text-foreground;
+    background: radial-gradient(circle, var(--gradient-primary) 10%, var(--gradient-secondary) 95%);;
+    background-size: 400% 400%;
+    background-position: center center;
+
+    -webkit-animation: AnimationName 10s ease infinite;
+    -moz-animation: AnimationName 10s ease infinite;
+    -o-animation: AnimationName 10s ease infinite;
+    animation: AnimationName 10s ease infinite;
   }
+
+  .pokemmo-logo {
+    display: block;
+    min-height: 30px;
+    min-width: 227px;
+    background-image: url('/images/pokemmo-logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-size:100% 100%}
+    50%{background-size:150% 150%}
+    100%{background-size:100% 100%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-size:100% 100%}
+    50%{background-size:150% 150%}
+    100%{background-size:100% 100%}
+}
+@-o-keyframes AnimationName {
+    0%{background-size:100% 100%}
+    50%{background-size:150% 150%}
+    100%{background-size:100% 100%}
+}
+@keyframes AnimationName {
+    0%{background-size:100% 100%}
+    50%{background-size:150% 150%}
+    100%{background-size:100% 100%}
 }
