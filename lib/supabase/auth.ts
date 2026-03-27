@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
-import { createClient } from "@/lib/supabase/server";
+import { createClient as createServerClient } from "@/lib/supabase/server";
 
 /**
  * Verifica se o usuário está autenticado.
@@ -11,7 +11,7 @@ import { createClient } from "@/lib/supabase/server";
  * const { claims } = await requireAuth();
  */
 export async function requireAuth() {
-  const supabase = await createClient();
+  const supabase = await createServerClient();
   const { data, error } = await supabase.auth.getClaims();
 
   if (error || !data?.claims) {

@@ -31,6 +31,7 @@
     --radius: 0.5rem;
     --gradient-primary: #2ccde8;
     --gradient-secondary: #2c99e4;
+    --user-icon: 32px;
   }
   .dark {
     --background: 0 0% 3.9%;
@@ -67,15 +68,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
-    background: radial-gradient(circle, var(--gradient-primary) 10%, var(--gradient-secondary) 95%);;
-    background-size: 400% 400%;
-    background-position: center center;
-
-    -webkit-animation: AnimationName 10s ease infinite;
-    -moz-animation: AnimationName 10s ease infinite;
-    -o-animation: AnimationName 10s ease infinite;
-    animation: AnimationName 10s ease infinite;
+    @apply bg-indigo-950 text-foreground;
   }
 
   .pokemmo-logo {
@@ -86,25 +79,4 @@
     background-size: contain;
     background-repeat: no-repeat;
   }
-}
-
-@-webkit-keyframes AnimationName {
-    0%{background-size:100% 100%}
-    50%{background-size:150% 150%}
-    100%{background-size:100% 100%}
-}
-@-moz-keyframes AnimationName {
-    0%{background-size:100% 100%}
-    50%{background-size:150% 150%}
-    100%{background-size:100% 100%}
-}
-@-o-keyframes AnimationName {
-    0%{background-size:100% 100%}
-    50%{background-size:150% 150%}
-    100%{background-size:100% 100%}
-}
-@keyframes AnimationName {
-    0%{background-size:100% 100%}
-    50%{background-size:150% 150%}
-    100%{background-size:100% 100%}
 }

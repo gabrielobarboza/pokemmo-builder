@@ -4,12 +4,12 @@
 >
 > | Categoria | Seções | Para quê |
 > |---|---|---|
-> | ��� **[Essencial](#-essencial)** | Project Overview, Agent Context | Lido automaticamente pelos agentes. Atualizar sempre que o projeto evoluir. |
-> | ��� **[Extra](#-extra)** | Environment, Setup, Structure, Workflows... | Contexto específico do projeto: variáveis, comandos, padrões de código. |
+> | ��� **[Essencial](#-essencial)** | Project Overview, Agent Context | Lido automaticamente pelos agentes. Atualizar sempre que o projeto evoluir. |
+> | ��� **[Extra](#-extra)** | Environment, Setup, Structure, Workflows... | Contexto específico do projeto: variáveis, comandos, padrões de código. |
 
 ---
 
-## ��� Essencial
+## ��� Essencial
 
 ### Project Overview
 
@@ -55,7 +55,7 @@ Os dados do jogo PokeMMO **não são armazenados diretamente** — são consumid
 pokemmo-builder/
   app/                    ← Rotas Next.js (App Router)
     auth/                 ← Páginas e rotas de autenticação (login, sign-up, etc.)
-    protected/            ← Rotas que exigem autenticação
+    box/            ← Rotas que exigem autenticação
     layout.tsx            ← Layout raiz
     page.tsx              ← Home pública
   components/             ← Componentes React reutilizáveis
@@ -81,7 +81,7 @@ pokemmo-builder/
 
 ---
 
-## ��� Extra
+## ��� Extra
 
 ### Variáveis de Ambiente
 
@@ -134,8 +134,8 @@ yarn lint
 ### Development Workflows
 
 #### Adicionando uma nova página autenticada
-1. Criar o arquivo em app/protected/[feature]/page.tsx
-2. A rota herda automaticamente o layout protegido de app/protected/layout.tsx
+1. Criar o arquivo em app/box/[feature]/page.tsx
+2. A rota herda automaticamente o layout protegido de app/box/layout.tsx
 3. Usar lib/supabase/server.ts para buscar dados no servidor
 
 #### Adicionando um componente shadcn/ui

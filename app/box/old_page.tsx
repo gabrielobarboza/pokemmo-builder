@@ -1,15 +1,12 @@
-import { requireAuth } from "@/lib/supabase/auth";
+"use client";
+
+import { useAuth } from "@/contexts/auth-context";
 import { InfoIcon } from "lucide-react";
 import { FetchDataSteps } from "@/components/tutorial/fetch-data-steps";
-import { Suspense } from "react";
-
-async function UserDetails() {
-  const { claims } = await requireAuth();
-
-  return JSON.stringify(claims, null, 2);
-}
 
 export default function ProtectedPage() {
+  const { claims } = useAuth();
+
   return (
     <div className="flex-1 w-full flex flex-col gap-12">
       <div className="w-full">
@@ -22,9 +19,7 @@ export default function ProtectedPage() {
       <div className="flex flex-col gap-2 items-start">
         <h2 className="font-bold text-2xl mb-4">Your user details</h2>
         <pre className="bg-accent/[0.33] text-xs font-mono p-3 rounded border max-h-32 overflow-auto">
-          <Suspense>
-            <UserDetails />
-          </Suspense>
+          {JSON.stringify(claims, null, 2)}
         </pre>
       </div>
       <div>
