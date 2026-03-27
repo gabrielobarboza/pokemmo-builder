@@ -3,6 +3,7 @@
 import { signOut } from "@/lib/supabase/auth-client";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { CircleUserRound } from "lucide-react";
+import { DropdownMenuContent, DropdownMenuItem } from "./ui/dropdown-menu";
 
 const ICON_SIZE = 48;
 
@@ -19,18 +20,18 @@ export function UserMenuDropdown({ email }: { email: string }) {
       </DropdownMenu.Trigger>
 
       <DropdownMenu.Portal>
-        <DropdownMenu.Content
-          className="py-2 min-w-[220px] rounded-md bg-white p-[5px] shadow-[0px_10px_38px_-10px_rgba(22,_23,_24,_0.35),_0px_10px_20px_-15px_rgba(22,_23,_24,_0.2)] will-change-[opacity,transform] data-[side=bottom]:animate-slideUpAndFade data-[side=left]:animate-slideRightAndFade data-[side=right]:animate-slideLeftAndFade data-[side=top]:animate-slideDownAndFade"
+        <DropdownMenuContent
+          className="py-2 min-w-[220px] rounded-md p-[5px] shadow-[0px_10px_38px_-10px_rgba(22,_23,_24,_0.35),_0px_10px_20px_-15px_rgba(22,_23,_24,_0.2)] will-change-[opacity,transform] data-[side=bottom]:animate-slideUpAndFade data-[side=left]:animate-slideRightAndFade data-[side=right]:animate-slideLeftAndFade data-[side=top]:animate-slideDownAndFade"
           sideOffset={5}
         >
-          <DropdownMenu.Item className="py-2 text-black group relative flex h-auto select-none items-center rounded-[3px] pl-4 pr-4 text-[13px] leading-none outline-none w-48">
+          <DropdownMenuItem>
             <div className="truncate w-48 inline-block" title={email}>{email}</div>
-          </DropdownMenu.Item>
-          <DropdownMenu.Item className="py-2 text-black group relative flex h-auto select-none items-center rounded-[3px] pl-4 pr-4 text-[13px] leading-none outline-none ">
-            <button onClick={signOut}>Logout</button>
-          </DropdownMenu.Item>
+          </DropdownMenuItem>
+          <DropdownMenuItem>
+            <button className="w-48 text-left" onClick={signOut}>Logout</button>
+          </DropdownMenuItem>
           <DropdownMenu.Arrow className="fill-white" />
-        </DropdownMenu.Content>
+        </DropdownMenuContent>
       </DropdownMenu.Portal>
     </DropdownMenu.Root>
   );
